@@ -3,12 +3,16 @@ angular.module('fullstack', ['ui.router'])
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: './routes/home/home.html',
+                // This route is always from index.html, regardless if you
+                // are using Gulp or not.
+                templateUrl: './public/routes/home/home.html',
                 controller: 'homeCtrl'
             })
             .state('admin', {
                 url: '/admin',
-                templateUrl: './routes/admin/admin.html',
+                // This route is always from index.html, regardless if you
+                // are using Gulp or not.
+                templateUrl: './public/routes/admin/admin.html',
                 controller: 'adminCtrl'
             })
 
