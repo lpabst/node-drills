@@ -32,7 +32,13 @@ app.get('/api/getItem/:index', function(req, res, next){
 
 app.put('/api/updateItem/:index', function(req, res, next){
 	let index = req.params.index;
+	var q = req.query;
 
+	for (var key in q){
+		data[index][key] = q[key];
+	}
+
+	res.status(200).send(data[index]);
 });
 
 app.post('/api/getData', function(req, res, next){
