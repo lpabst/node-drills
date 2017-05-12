@@ -24,7 +24,7 @@ app.use(session({
 app.get('/api/users', userCtrl.getUsers);
 app.get('/api/users/:index', userCtrl.getUserByIndex);
 
-
+app.post('/api/login', userCtrl.login);
 
 
 

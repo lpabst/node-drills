@@ -1,10 +1,12 @@
 
 <section class='home_main_container'>
 
-    <form class='home_login_form'>
-        <input type='text' placeholder="username" ng-model='username'>
-        <input type='password' placeholder="password" ng-model='password'>
-        <button ng-click=''>Log In</button>
+    <form class='home_login_form' ng-submit='login(user)'>
+        <input type='text' placeholder="username" ng-model='user.name' id='home_username'>
+        <input type='password' placeholder="password" ng-model='user.password' id='home_password'>
+        <button ng-click='login(user)' id='home_login_button'>Log In</button>
+
+        <div class='home_results'>{{ status }}</div>
     </form>
 
 
