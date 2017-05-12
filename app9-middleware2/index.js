@@ -3,16 +3,18 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var port = 3000;
 var data = require('./data.js')
+var middleware = require('./middleware');
+
+var app = express();
 
 app.use(bodyParser.json());
-
 app.use(session({
   secret: 'qwertyuiop',
   saveUninitialized: true,
   resave: true
 }));
 
-var app = express();
+
 
 // Define your middleware function here (or in a separate middleware file if you like)
 
@@ -43,12 +45,12 @@ app.get('/data/:year', function(req, res, next) {
 	res.status(200).json(results);
 })
 
-app.post('/data', function(req, res, next) {
+app.post('/data', middleware.checkLogin, function(req, res, next) {
 	data.push(req.body);
 	res.status(200).json(data);
 })
 
-app.put('/data/:year', function(req, res, next) {
+app.put('/data/:year', middleware.checkLogin, function(req, res, next) {
 	var year = parseInt(req.params.year);
 	data.filter(function(el, idx, arr) {
 		if (el.year === year) {
@@ -58,13 +60,18 @@ app.put('/data/:year', function(req, res, next) {
 	res.status(200).json(data);
 })
 
-app.delete('/data/:year', function(req, res, next) {
+app.delete('/data/:year', middleware.checkLogin, function(req, res, next) {
 	var year = parseInt(req.params.year);
 	data = data.filter(function(el) {
 		return el.year !== year;
 	})
 	res.status(200).json(data);
 })
+
+
+
+
+
 
 app.listen(port, function() {
 	console.log('Listening on port',port);
