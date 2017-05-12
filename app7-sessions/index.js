@@ -14,11 +14,12 @@ app.use(session({
 
 
 app.get('/api/data', function(req, res, next){
-  
+  return res.status(200).send(req.session.data);
 });
 
 app.post('/api/data', function(req, res, next){
-  
+  req.session.data = req.body;
+  return res.status(200).send('post worked')
 });
 
 
