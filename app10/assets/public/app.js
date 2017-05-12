@@ -1,4 +1,4 @@
-angular.module('fullstack', ['ui-router'])
+angular.module('fullstack', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider){
         $stateProvider
             .state('home', {

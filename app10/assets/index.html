@@ -31,9 +31,8 @@
         </div>
 
         <ul class='mobile_nav' ng-show='showMobile'>
-            <li ui-sref='/'>Home</li>
-            <li ui-sref='/admin'>Admin</li>
-            <li>{{ test }}</li>
+            <li ui-sref='/' ng-click='showMobile = !showMobile'>Home</li>
+            <li ui-sref='/admin' ng-click='showMobile = !showMobile'>Admin</li>
         </ul>
 
     </header>

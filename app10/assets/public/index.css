@@ -21,6 +21,10 @@
     top: 30px;
 }
 
+.desktop_nav li{
+    cursor: pointer;
+}
+
 .mobile_header{
     width: 100%;
     height: 80px;
