@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var port = 3000;
 var config = require('./config');
+var userCtrl = require('./controllers/userCtrl');
 
 var app = express();
 
@@ -20,7 +21,8 @@ app.use(session({
 
 
 //Endpoints
-
+app.get('/api/users', userCtrl.getUsers);
+app.get('/api/users/:index', userCtrl.getUserByIndex);
 
 
 
