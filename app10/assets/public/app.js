@@ -11,4 +11,7 @@ angular.module('fullstack', ['ui-router'])
                 templateUrl: './routes/admin/admin.html',
                 controller: 'adminCtrl'
             })
+
+
+        $urlRouterProvider.otherwise('/');
     })

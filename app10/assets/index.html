@@ -12,9 +12,40 @@
 <body>
     
 
+    <header class='desktop_header'>
+
+        <ul class='desktop_nav'>
+            <li ui-sref='/'>Home</li>
+            <li ui-sref='/admin'>Admin</li>
+        </ul>
+
+    </header>
+
+
+    <header class='mobile_header' ng-controller='mainCtrl'>
+
+        <div class='ham' ng-click='showMobile = !showMobile'>
+            <div class='line'></div>
+            <div class='line'></div>
+            <div class='line'></div>
+        </div>
+
+        <ul class='mobile_nav' ng-show='showMobile'>
+            <li ui-sref='/'>Home</li>
+            <li ui-sref='/admin'>Admin</li>
+            <li>{{ test }}</li>
+        </ul>
+
+    </header>
 
 
 
+
+
+
+    <ui-view>
+        <!--Routed Content goes here-->
+    </ui-view>
 
 
 
@@ -28,6 +59,7 @@
 <script src='./public/routes/home/homeCtrl.js'></script>
 <script src='./public/routes/admin/adminCtrl.js'></script>
 <script src='./public/js/userService.js'></script>
+<script src='./public/js/mainCtrl.js'></script>
 
 </body>
 </html>
