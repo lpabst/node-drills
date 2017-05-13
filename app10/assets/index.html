@@ -8,6 +8,7 @@
     <link rel=stylesheet href='./public/index.css'>
     <link rel=stylesheet href='./public/routes/home/home.css'>
     <link rel=stylesheet href='./public/routes/admin/admin.css'>
+    <link rel=stylesheet href='./public/routes/about/about.css'>
 </head>
 <body>
     
@@ -16,7 +17,7 @@
 
         <ul class='desktop_nav'>
             <li ui-sref='home'>Home</li>
-            <li ui-sref='admin'>Admin</li>
+            <li ui-sref='about'>About</li>
         </ul>
 
     </header>
@@ -32,7 +33,7 @@
 
         <ul class='mobile_nav' ng-show='showMobile'>
             <li ui-sref='home' ng-click='showMobile = !showMobile'>Home</li>
-            <li ui-sref='admin' ng-click='showMobile = !showMobile'>Admin</li>
+            <li ui-sref='about' ng-click='showMobile = !showMobile'>About</li>
         </ul>
 
     </header>

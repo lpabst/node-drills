@@ -53,4 +53,15 @@
     font-weight: bold;
 }
 
+.home_continue_button{
+    width: 120px;
+    height: 30px;
+    font-weight: bold;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 160px;
+    left: calc(50% - 60px);
+}
 
