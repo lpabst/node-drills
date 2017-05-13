@@ -40,7 +40,7 @@
     left: 15px;
     top: 15px;
     background: gray;
-    z-index: 100;
+    z-index: 105;
     padding: 9px 0 0 10px;
     cursor: pointer;
 }
@@ -61,6 +61,7 @@
     top: 10px;
     background: #ddd;
     padding-top:60px;
+    z-index: 100;
 }
 
 .mobile_nav li{

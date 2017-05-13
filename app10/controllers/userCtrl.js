@@ -4,12 +4,21 @@ const users = require('./users');
 module.exports = {
 
     getUsers: function(req, res, next){
-        return res.status(200).json(users);
+        if (req.session.admin){
+            return res.status(200).json(users);
+        }else{
+            return res.status(200).json(['Unauthorized. Please log in to access data']);
+        }
     },
 
     getUserByIndex: function(req, res, next){
         let i = req.params.index;
-        return res.status(200).json(users[i]);
+        if (req.session.admin){
+            return res.status(200).json([users[i]]);
+        }else{
+            return res.status(200).json(['Unauthorized. Please log in to access data']);
+        }
+
     },
 
     login: function(req, res, next){
